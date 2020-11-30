@@ -16,7 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Throw a mob in the direction you are facing when you right click with a bone.", usage = "/<command> <mobtype [speed] | off | list>", aliases = "toss"))
+@CommandParameters(description = "Throw a mob in the direction you are facing when you right click with a bone.", usage = "/<command> <mobtype [speed] | off | list>")
 public class Command_tossmob extends FreedomCommand
 {
 
