@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Quickly change your own gamemode to adventure, or set another player's gamemode to adventure.", usage = "/<command> <player | -a>", aliases = "gma")
+@CommandParameters(description = "Change your own gamemode to adventure, change everyone's gamemode to adventure, or change someone else's gamemode to adventure.", usage = "/<command> <player | -a>", aliases = "gma")
 public class Command_adventure extends FreedomCommand
 {
 

@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Quickly change your own gamemode to creative, or set another player's gamemode to creative.", usage = "/<command> <player | -a>", aliases = "gmc")
+@CommandParameters(description = "Change your own gamemode to creative, change everyone's gamemode to creative, or change someone else's gamemode to creative.", usage = "/<command> <player | -a>", aliases = "gmc")
 public class Command_creative extends FreedomCommand
 {
 

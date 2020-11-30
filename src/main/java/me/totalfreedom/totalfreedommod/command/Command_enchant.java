@@ -15,7 +15,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Enchant held items.", usage = "/<command> <list | addall | reset | add <name> [level] | remove <name>>")
+@CommandParameters(description = "Allows you to put whatever enchants you want on a held item.", usage = "/<command> <list | addall | reset | add <name> [level] | remove <name>>")
 public class Command_enchant extends FreedomCommand
 {
 
