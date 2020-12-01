@@ -101,7 +101,7 @@ public class Command_cage extends FreedomCommand
 
         if (outerMaterial == Material.PLAYER_HEAD)
         {
-            FUtil.staffAction(sender.getName(), "Caging " + player.getName() + " in " + skullName + ".", true);
+            FUtil.staffAction(sender.getName(), "Caging " + player.getName() + " in " + skullName, true);
         }
         else
         {

@@ -42,7 +42,7 @@ public class Command_linkreddit extends FreedomCommand
             }
             catch (ApiException e)
             {
-                msg("Could not find a Reddit account by the name of " + args[0] + ".", ChatColor.RED);
+                msg("Could not find a Reddit account by the name of " + args[0], ChatColor.RED);
                 return true;
             }
 
