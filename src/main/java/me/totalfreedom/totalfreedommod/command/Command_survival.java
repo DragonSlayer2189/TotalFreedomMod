@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Change your own gamemode to survival, change everyone's gamemode to survival, or change someone else's gamemode to survival.", usage = "/<command> <[player] | -a>", aliases = "gms")
+@CommandParameters(description = "Change your own gamemode, someone elses' gamemode, or everyones gamemode to survival.", usage = "/<command> <[player] | -a>", aliases = "gms")
 public class Command_survival extends FreedomCommand
 {
 

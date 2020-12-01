@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Broadcasts the given message to get peoples attention, includes sender name.", usage = "/<command> <message>")
+@CommandParameters(description = "Broadcasts the given message as the server, includes sender name.", usage = "/<command> <message>")
 public class Command_say extends FreedomCommand
 {
 

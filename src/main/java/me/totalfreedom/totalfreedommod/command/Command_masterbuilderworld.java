@@ -174,7 +174,6 @@ public class Command_masterbuilderworld extends FreedomCommand
     }
 
     // TODO: Redo this properly
-    // ^^^
     private void assertCommandPerms(CommandSender sender, Player playerSender) throws PermissionDeniedException
     {
         if (!(sender instanceof Player) || playerSender == null || !plugin.sl.isAdmin(playerSender))

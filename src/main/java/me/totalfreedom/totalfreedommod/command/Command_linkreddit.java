@@ -38,7 +38,7 @@ public class Command_linkreddit extends FreedomCommand
 
             try
             {
-                plugin.rd.sendModMessage(username, "Link Code", "Please run the following in-game to link your Reddit account: /linkreddit code " + code + ".");
+                plugin.rd.sendModMessage(username, "Link Code", "Please run the following in-game to link your Reddit account: /linkreddit code " + code);
             }
             catch (ApiException e)
             {
