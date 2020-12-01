@@ -30,6 +30,7 @@ public class Command_aeclear extends FreedomCommand
                 }
             }
         }
+        
         msg(removed + " area effect clouds removed.");
         return true;
     }
