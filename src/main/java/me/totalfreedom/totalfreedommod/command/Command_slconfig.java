@@ -92,7 +92,7 @@ public class Command_slconfig extends FreedomCommand
                 StaffMember staffMember = plugin.sl.getEntryByName(args[1]);
                 if (staffMember == null)
                 {
-                    msg("Unknown staff member: " + args[1] + ".");
+                    msg("Unknown staff member: " + args[1]);
                     return true;
                 }
 
@@ -140,7 +140,7 @@ public class Command_slconfig extends FreedomCommand
 
                 if (staffMember == null)
                 {
-                    msg("Staff member not found: " + args[1] + ".");
+                    msg("Staff member not found: " + args[1]);
                 }
                 else
                 {
@@ -279,7 +279,7 @@ public class Command_slconfig extends FreedomCommand
 
                 if (staffMember == null)
                 {
-                    msg("Staff member not found: " + args[1] + ".");
+                    msg("Staff member not found: " + args[1]);
                     return true;
                 }
 

@@ -21,7 +21,7 @@ public class Command_kicknoob extends FreedomCommand
         {
             if (!plugin.sl.isStaff(player))
             {
-                player.kickPlayer(ChatColor.RED + "All non-staff were kicked by " + sender.getName() + ".");
+                player.kickPlayer(ChatColor.RED + "All non-staff were kicked by " + sender.getName());
             }
         }
 

@@ -53,7 +53,7 @@ public class Command_warn extends FreedomCommand
 
         String warnReason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
         player.sendTitle(ChatColor.RED + "You've been warned.", ChatColor.YELLOW + "Reason: " + warnReason, 20, 100, 60);
-        msg(ChatColor.GREEN + "You have successfully warned " + player.getName() + ".");
+        msg(ChatColor.GREEN + "You have successfully warned " + player.getName());
 
         if (quiet)
         {

@@ -54,11 +54,11 @@ public class Command_unbanip extends FreedomCommand
 
         if (!silent)
         {
-            FUtil.staffAction(sender.getName(), "Unbanned the ip " + ip + ".", true);
+            FUtil.staffAction(sender.getName(), "Removed the ip " + ip + "from the ban list.", true);
         }
         else
         {
-            msg("Quietly unbanned the ip " + ip + ".");
+            msg("Quietly removed the ip " + ip + " from the ban list.");
         }
         return true;
     }

@@ -105,7 +105,7 @@ public class Command_cage extends FreedomCommand
         }
         else
         {
-            FUtil.staffAction(sender.getName(), "Caging " + player.getName() + ".", true);
+            FUtil.staffAction(sender.getName(), "Caging " + player.getName(), true);
         }
         return true;
     }

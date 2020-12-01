@@ -76,8 +76,8 @@ public class Command_blockcmd extends FreedomCommand
         if (!playerdata.allCommandsBlocked())
         {
             playerdata.setCommandsBlocked(true);
-            FUtil.staffAction(sender.getName(), "Blocking all commands for " + player.getName() + ".", true);
-            msg("Blocked commands for " + player.getName() + ".");
+            FUtil.staffAction(sender.getName(), "Blocking all commands for " + player.getName(), true);
+            msg("Blocked commands for " + player.getName());
         }
         else
         {

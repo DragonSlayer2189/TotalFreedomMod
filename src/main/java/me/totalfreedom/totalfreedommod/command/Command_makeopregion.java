@@ -90,7 +90,7 @@ public class Command_makeopregion extends FreedomCommand
 
         regionManager.addRegion(region);
 
-        msg("Successfully created the region '" + name + "' for " + player.getName() + ".", ChatColor.GREEN);
+        msg("Successfully created the region '" + name + "' for " + player.getName() + "!", ChatColor.GREEN);
 
         return true;
     }

@@ -30,9 +30,9 @@ public class Command_wipepunishments extends FreedomCommand
         {
             String username = args[0];
 
-            FUtil.staffAction(sender.getName(), "Wiping the punishment history for " + username + ".", true);
+            FUtil.staffAction(sender.getName(), "Wiping the punishment history for " + username, true);
 
-            msg("Wiped " + plugin.pul.clear(username) + " punishments for " + username + ".");
+            msg("Wiped " + plugin.pul.clear(username) + " punishments for " + username);
         }
 
         return true;

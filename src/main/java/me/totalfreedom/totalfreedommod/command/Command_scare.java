@@ -37,7 +37,7 @@ public class Command_scare extends FreedomCommand
             return true;
         }
 
-        msg("Scared " + player.getName() + ".");
+        msg("Scared " + player.getName());
         player.sendMessage(ChatColor.RED + "ZING!");
 
         player.spawnParticle(Particle.MOB_APPEARANCE, player.getLocation(), 4);

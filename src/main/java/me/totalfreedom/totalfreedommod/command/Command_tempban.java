@@ -101,7 +101,7 @@ public class Command_tempban extends FreedomCommand
         }
         else
         {
-            msg("Quietly temporarily banned " + player.getName() + ".");
+            msg("Quietly banned " + player.getName() + " temporarily.");
         }
 
 

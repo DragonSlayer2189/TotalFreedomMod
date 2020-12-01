@@ -59,14 +59,14 @@ public class Command_lockup extends FreedomCommand
 
                 if (!silent)
                 {
-                    FUtil.staffAction(sender.getName(), "Locking up " + player.getName() + ".", true);
+                    FUtil.staffAction(sender.getName(), "Locking up " + player.getName(), true);
                 }
                 else
                 {
                     msg("Locking up " + player.getName() + " quietly.");
                 }
                 startLockup(player);
-                msg("Locked up " + player.getName() + ".");
+                msg("Locked up " + player.getName());
             }
             else if ("off".equals(args[1]))
             {
@@ -83,7 +83,7 @@ public class Command_lockup extends FreedomCommand
                     FUtil.staffAction(sender.getName(), "Unlocking " + player.getName(), true);
                 }
                 cancelLockup(player);
-                msg("Unlocked " + player.getName() + ".");
+                msg("Unlocked " + player.getName());
             }
             else
             {
