@@ -32,7 +32,7 @@ public class Command_whohas extends FreedomCommand
 
         if (material == null)
         {
-            msg("Invalid item: " + materialName + ".", ChatColor.RED);
+            msg("Invalid item: " + materialName, ChatColor.RED);
             return true;
         }
 

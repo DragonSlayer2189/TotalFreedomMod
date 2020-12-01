@@ -133,7 +133,6 @@ public class Discord extends FreedomService
     }
 
     // Do no ask why this is here. I spent two hours trying to make a simple thing work
-    // ok
     public class StartEvent
     {
         private final JDA api;

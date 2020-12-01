@@ -116,7 +116,7 @@ public class Module_logfile extends HTTPDModule
                 {
                     try
                     {
-                        FLog.info("The IP \"" + remoteAddress + "\" is downloading log file: " + params.get("logFileName") + ".");
+                        FLog.info("The IP \"" + remoteAddress + "\" is downloading log file: " + params.get("logFileName"));
                         throw new ResponseOverrideException(downloadLogFile(params.get("logFileName")));
                     }
                     catch (LogFileTransferException ex)
