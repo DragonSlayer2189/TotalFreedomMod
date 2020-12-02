@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Ride on the top of the specified player.", usage = "/<command> <playername | mode <normal | off | ask>>")
+@CommandParameters(description = "Ride on the top of the specified player.", usage = "/<command> <<player> | mode <normal | off | ask>>")
 public class Command_ride extends FreedomCommand
 {
 

@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.material.Lever;
 
 @CommandPermissions(level = Rank.NON_OP, source = SourceType.BOTH)
-@CommandParameters(description = "Set the on/off state of the lever at position x, y, z in world 'worldname'.", usage = "/<command> <x> <y> <z> <worldname> <on|off>")
+@CommandParameters(description = "Set the on/off state of a lever at a specified x, y, z position and world.", usage = "/<command> <x> <y> <z> <world> <on|off>")
 public class Command_setlever extends FreedomCommand
 {
 

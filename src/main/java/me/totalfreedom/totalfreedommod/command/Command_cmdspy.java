@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Allows Admins to view commands executed by lower ranks.", usage = "/<command>", aliases = "commandspy")
+@CommandParameters(description = "Allows admins to view commands executed by lower ranks.", usage = "/<command>", aliases = "commandspy")
 public class Command_cmdspy extends FreedomCommand
 {
 

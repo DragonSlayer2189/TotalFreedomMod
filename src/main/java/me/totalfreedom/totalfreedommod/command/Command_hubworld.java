@@ -13,7 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Go to the hub.", usage = "/<command> <time [morning | noon | evening | night] | weather [off | rain | storm]>", aliases = "hw,hub")
+@CommandParameters(description = "Go to the hub.", usage = "/<command> [time <morning | noon | evening | night> | weather <off | rain | storm>]", aliases = "hw,hub")
 public class Command_hubworld extends FreedomCommand
 {
 // this will need to be redone when actual hub is added

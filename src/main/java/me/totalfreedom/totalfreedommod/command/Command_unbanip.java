@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Unbans the specified ip.", usage = "/<command> <ip> [-q]")
+@CommandParameters(description = "Unbans the specified IP.", usage = "/<command> <ip> [-q]")
 public class Command_unbanip extends FreedomCommand
 {
 
@@ -35,13 +35,13 @@ public class Command_unbanip extends FreedomCommand
 
         if (ban == null)
         {
-            msg("The ip " + ip + " is not banned.", ChatColor.RED);
+            msg("The IP " + ip + " is not banned.", ChatColor.RED);
             return true;
         }
 
         if (ban.hasUsername())
         {
-            msg("This ban is not an ip-only ban.");
+            msg("This ban is not an IP-only ban.");
             return true;
         }
 
@@ -54,11 +54,11 @@ public class Command_unbanip extends FreedomCommand
 
         if (!silent)
         {
-            FUtil.staffAction(sender.getName(), "Removed the ip " + ip + "from the ban list.", true);
+            FUtil.staffAction(sender.getName(), "Removed the IP " + ip + "from the ban list.", true);
         }
         else
         {
-            msg("Quietly removed the ip " + ip + " from the ban list.");
+            msg("Quietly removed the IP " + ip + " from the ban list.");
         }
         return true;
     }

@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Essentials Interface Command - Remove the nickname of all players on the server.", usage = "/<command>")
+@CommandParameters(description = "Remove the nickname of all players on the server.", usage = "/<command>")
 public class Command_denick extends FreedomCommand
 {
 

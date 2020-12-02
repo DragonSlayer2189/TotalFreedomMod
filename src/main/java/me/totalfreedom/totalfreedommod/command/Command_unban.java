@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Unbans the specified player.", usage = "/<command> <username> [-r]")
+@CommandParameters(description = "Unbans the specified player, can also restore CoreProtect data if needed.", usage = "/<command> <player> [-q] [-r]")
 public class Command_unban extends FreedomCommand
 {
 
@@ -24,19 +24,31 @@ public class Command_unban extends FreedomCommand
             String username;
             final List<String> ips = new ArrayList<>();
             final PlayerData entry = plugin.pl.getData(args[0]);
+            boolean silent = false;
 
             if (entry == null)
             {
                 msg("Can't find that user. If target is not logged in, make sure that you spelled the name exactly.");
                 return true;
             }
+            //someone please check if i implemented -q correctly
+            if (args.length > 1 && args[1].equals("-q"))
+            {
+                silent = true;
+            }
 
             username = entry.getName();
             ips.addAll(entry.getIps());
-
-            FUtil.staffAction(sender.getName(), "Unbanning " + username, true);
-            msg(username + " has been unbanned along with the following IPs: " + StringUtils.join(ips, ", "));
             plugin.bm.removeBan(plugin.bm.getByUsername(username));
+            if (!silent)
+            {
+                FUtil.staffAction(sender.getName(), "Unbanning " + username, true);
+                msg(username + " has been unbanned along with the following IPs: " + StringUtils.join(ips, ", "));
+            }
+            else
+            {
+                msg(username + " and the IPs: " + StringUtils.join(ips, ", ") + " were unbanned quietly.");
+            }
 
             if (args.length >= 2)
             {

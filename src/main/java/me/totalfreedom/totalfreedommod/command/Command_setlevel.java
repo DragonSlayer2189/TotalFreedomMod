@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Sets your experience level (XP). Only goes to level 50.", usage = "/<command> [level]")
+@CommandParameters(description = "Sets your experience level (XP). Only goes to level 50.", usage = "/<command> <level>")
 public class Command_setlevel extends FreedomCommand
 {
 

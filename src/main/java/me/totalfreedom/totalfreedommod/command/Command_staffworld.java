@@ -13,7 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Sends you to the staff world and allows staff to change world parameters.", usage = "/<command> <time [morning | noon | evening | night] | weather [off | rain | storm]>", aliases = "sw")
+@CommandParameters(description = "Sends you to the staff world and allows staff to change world parameters.", usage = "/<command> [time <morning | noon | evening | night> | weather <off | rain | storm>]", aliases = "sw")
 public class Command_staffworld extends FreedomCommand
 {
 

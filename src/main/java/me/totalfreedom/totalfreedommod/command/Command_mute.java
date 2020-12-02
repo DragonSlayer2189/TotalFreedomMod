@@ -17,7 +17,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Mutes a player, or multiple players. Can also smite.", usage = "/<command> <[-s | -q] <player> [reason] | list | purge | -a>", aliases = "stfu")
+@CommandParameters(description = "Mutes a player, or multiple players. Can also smite.", usage = "/<command> [-s | -q] <<player> [reason] | list | purge | -a>", aliases = "stfu")
 public class Command_mute extends FreedomCommand
 {
 

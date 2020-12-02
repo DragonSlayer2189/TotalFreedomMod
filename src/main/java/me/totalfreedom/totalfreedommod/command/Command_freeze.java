@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
-@CommandParameters(description = "Freeze/Unfreeze a specified player, or all non-staff on the server.", usage = "/<command> <player | purge>", aliases = "fr")
+@CommandParameters(description = "Freeze/Unfreeze a specified player, or all non-staff on the server.", usage = "/<command> [<player> | purge]", aliases = "fr")
 public class Command_freeze extends FreedomCommand
 {
 

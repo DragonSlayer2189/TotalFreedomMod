@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.SENIOR_ADMIN, source = SourceType.ONLY_CONSOLE, blockHostConsole = true)
-@CommandParameters(description = "Wipes all logged punishments or punishments for a specific user.", usage = "/<command> <username | -a>")
+@CommandParameters(description = "Wipes all logged punishments or punishments for a specific user.", usage = "/<command> <player | -a>")
 public class Command_wipepunishments extends FreedomCommand
 {
 
