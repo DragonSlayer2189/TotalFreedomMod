@@ -23,7 +23,7 @@ public class Module_activitylog extends HTTPDModule
         if (!isAuthorized(remoteAddress))
         {
             return new NanoHTTPD.Response(NanoHTTPD.Response.Status.NOT_FOUND, NanoHTTPD.MIME_PLAINTEXT,
-                    "You may not view the activity log. Your IP, " + remoteAddress + ", is not registered to an admin on the server.");
+                    "You may not view the activity log. Your IP, " + remoteAddress + ", is not registered to an Admin on the server.");
         }
         File activityLogFile = new File(plugin.getDataFolder(), ActivityLog.FILENAME);
         if (activityLogFile.exists())

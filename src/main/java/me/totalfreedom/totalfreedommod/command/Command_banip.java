@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH, blockHostConsole = true)
-@CommandParameters(description = "Bans the specified ip.", usage = "/<command> <ip> [reason] [-q]")
+@CommandParameters(description = "Bans the specified IP.", usage = "/<command> <IP> [reason] [-q]")
 public class Command_banip extends FreedomCommand
 {
 
@@ -77,7 +77,7 @@ public class Command_banip extends FreedomCommand
             }
             else
             {
-                msg("Banned the ip " + ip + " quietly.");
+                msg("Banned the IP " + ip + " quietly.");
             }            
         }
 

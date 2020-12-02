@@ -360,7 +360,7 @@ public class SQLite extends FreedomService
         }
         catch (SQLException e)
         {
-            FLog.severe("Failed to get player by ip:");
+            FLog.severe("Failed to get player by IP:");
             FLog.severe(e);
         }
 

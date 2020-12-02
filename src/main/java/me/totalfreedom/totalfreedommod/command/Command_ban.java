@@ -19,7 +19,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH, blockHostConsole = true)
-@CommandParameters(description = "Bans the specified player.", usage = "/<command> <username> [reason] [-nrb | -q]", aliases = "gtfo")
+@CommandParameters(description = "Bans the specified player.", usage = "/<command> <player> [reason] [-nrb | -q]", aliases = "gtfo")
 public class Command_ban extends FreedomCommand
 {
     @Override

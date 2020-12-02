@@ -56,7 +56,7 @@ public class AutoEject extends FreedomService
             method = EjectMethod.STRIKE_THREE;
         }
 
-        FLog.info("AutoEject -> name: " + player.getName() + " - player ip: " + ip + " - method: " + method.toString());
+        FLog.info("AutoEject -> name: " + player.getName() + " - player IP: " + ip + " - method: " + method.toString());
 
         player.setOp(false);
         player.setGameMode(GameMode.SURVIVAL);

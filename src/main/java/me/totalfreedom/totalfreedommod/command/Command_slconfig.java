@@ -18,7 +18,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "List, add, remove, or set the rank of players, clean or reload the staff list, or view staff info.", usage = "/<command> <list | clean | reload | | setrank <username> <rank> | <add | remove | info> <username>>")
+@CommandParameters(description = "List, add, remove, or set the rank of players, clean or reload the staff list, or view staff info.", usage = "/<command> <list | clean | reload | | setrank <player> <rank> | <add | remove | info> <player>>")
 public class Command_slconfig extends FreedomCommand
 {
 

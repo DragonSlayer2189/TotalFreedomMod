@@ -13,7 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
-@CommandParameters(description = "List, add, or remove master builders. Master builders can also clear their own IPs.", usage = "/<command> <list | clearip <ip> | clearips | <add | remove> <username>>")
+@CommandParameters(description = "List, add, or remove master builders. Master builders can also clear their own IPs.", usage = "/<command> <list | clearip <IP> | clearips | <add | remove> <player>>")
 public class Command_mbconfig extends FreedomCommand
 {
     @Override

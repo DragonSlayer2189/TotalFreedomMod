@@ -17,7 +17,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Manage your admin entry. Seniors can also manage the entries of other admins.", usage = "/<command> [-o <admin name>] <clearips | clearip <ip> | setscformat <format> | clearscformat> | syncroles>")
+@CommandParameters(description = "Manage your Admin entry. Seniors can also manage the entries of other Admins.", usage = "/<command> [-o <admin name>] <clearips | clearip <IP> | setscformat <format> | clearscformat> | syncroles>")
 public class Command_myadmin extends FreedomCommand
 {
     @Override

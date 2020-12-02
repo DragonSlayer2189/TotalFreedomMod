@@ -52,7 +52,7 @@ public class BanManager extends FreedomService
                     {
                         uuid = UUID.fromString(strUUID);
                     }
-                    List<String> ips = FUtil.stringToList(banSet.getString("ips"));
+                    List<String> ips = FUtil.stringToList(banSet.getString("IPs"));
                     String by = banSet.getString("by");
                     Date at = new Date(banSet.getLong("at"));
                     Date expires = new Date(banSet.getLong("expires"));
