@@ -66,9 +66,13 @@ public class FUtil
             "e67d77c4-fff9-4cea-94cc-9f1f1ab7806b", // aggelosQQ
             "0061326b-8b3d-44c8-830a-5f2d59f5dc1b", // scripthead
             "78408086-1991-4c33-a571-d8fa325465b2", // Telesphoreo
-            "67ce0e28-3d6b-469c-ab71-304eec81b614"  // CoolJWB
+            "67ce0e28-3d6b-469c-ab71-304eec81b614", // CoolJWB
+            "03b41e15-d03f-4025-86f5-f1812df200fa", // elmon_
+            "d018f2b8-ce60-4672-a45f-e580e0331299", // speednt
+            "458de06f-36a5-4e1b-aaa6-ec1d1751c5b6", // SupItsDillon
+            "c8e5af82-6aba-4dd7-83e8-474381380cc9" // Paldiu
     );
-    public static final List<String> DEVELOPER_NAMES = Arrays.asList("Madgeek1450", "Prozza", "WickedGamingUK", "Wild1145", "aggelosQQ", "scripthead", "Telesphoreo", "CoolJWB");
+    public static final List<String> DEVELOPER_NAMES = Arrays.asList("Madgeek1450", "Prozza", "WickedGamingUK", "Wild1145", "aggelosQQ", "scripthead", "Telesphoreo", "CoolJWB", "elmon_", "speednt", "SupItsDillon", "Paldiu");
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
     public static final Map<String, ChatColor> CHAT_COLOR_NAMES = new HashMap<>();
     public static final List<ChatColor> CHAT_COLOR_POOL = Arrays.asList(
@@ -190,8 +194,9 @@ public class FUtil
 
     /**
      * A way to get a sublist with a page index and a page size.
-     * @param list A list of objects that should be split into pages.
-     * @param size The size of the pages.
+     *
+     * @param list  A list of objects that should be split into pages.
+     * @param size  The size of the pages.
      * @param index The page index, if outside of bounds error will be thrown. The page index starts at 0 as with all lists.
      * @return A list of objects that is the page that has been selected from the previous last parameter.
      */
@@ -254,7 +259,7 @@ public class FUtil
         return null;
     }
 
-    public static Response sendRequest(String endpoint, String method, List<String>headers, String body) throws IOException
+    public static Response sendRequest(String endpoint, String method, List<String> headers, String body) throws IOException
     {
         URL url = new URL(endpoint);
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
@@ -800,13 +805,13 @@ public class FUtil
         {
             c1values[i] = Math.round(c1values[i] + factor * (c2values[i] - c1values[i]));
         }
-        return Color.fromRGB((int) c1values[0], (int) c1values[1], (int) c1values[2]);
+        return Color.fromRGB((int)c1values[0], (int)c1values[1], (int)c1values[2]);
     }
 
     public static boolean isValidIPv4(String ip)
     {
         if (ip.matches("^([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$")
-            || ip.matches("^([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([*])\\.([*])$"))
+                || ip.matches("^([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\\.([*])\\.([*])$"))
         {
             return true;
         }
@@ -867,5 +872,39 @@ public class FUtil
                 location.getWorld().createExplosion(location, power);
             }
         }.runTaskLater(TotalFreedomMod.getPlugin(), delay);
+    }
+
+    public static class PaginationList<T> extends ArrayList<T>
+    {
+        private final int epp;
+
+        public PaginationList(int epp)
+        {
+            super();
+            this.epp = epp;
+        }
+
+        @SafeVarargs
+        public PaginationList(int epp, T... elements)
+        {
+            super(Arrays.asList(elements));
+            this.epp = epp;
+        }
+
+        public int getPageCount()
+        {
+            return (int)Math.ceil((double)size() / (double)epp);
+        }
+
+        public List<T> getPage(int page)
+        {
+            if (page < 1 || page > getPageCount())
+            {
+                return null;
+            }
+            int startIndex = (page - 1) * epp;
+            int endIndex = Math.min(startIndex + (epp - 1), this.size() - 1);
+            return subList(startIndex, endIndex + 1);
+        }
     }
 }
