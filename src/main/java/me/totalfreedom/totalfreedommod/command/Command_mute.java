@@ -53,7 +53,7 @@ public class Command_mute extends FreedomCommand
 
         if (args[0].equals("purge"))
         {
-            FUtil.staffAction(sender.getName(), "Unmuting all players.", true);
+            FUtil.staffAction(sender.getName(), "Unmuting all players", true);
             FPlayer info;
             int count = 0;
             for (Player mp : server.getOnlinePlayers())
@@ -73,7 +73,7 @@ public class Command_mute extends FreedomCommand
 
         if (args[0].equals("-a"))
         {
-            FUtil.staffAction(sender.getName(), "Muting all non-staff.", true);
+            FUtil.staffAction(sender.getName(), "Muting all non-staff", true);
 
             FPlayer playerdata;
             int counter = 0;

@@ -72,11 +72,11 @@ public class Command_myadmin extends FreedomCommand
 
                 if (init == null)
                 {
-                    FUtil.staffAction(sender.getName(), "Clearing my IPs.", true);
+                    FUtil.staffAction(sender.getName(), "Clearing my IPs", true);
                 }
                 else
                 {
-                    FUtil.staffAction(sender.getName(), "Clearing " + target.getName() + "'s IPs.", true);
+                    FUtil.staffAction(sender.getName(), "Clearing " + target.getName() + "'s IPs", true);
                 }
 
                 int counter = target.getIps().size() - 1;
@@ -125,7 +125,7 @@ public class Command_myadmin extends FreedomCommand
                     return true;
                 }
 
-                FUtil.staffAction(sender.getName(), "Removing an IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs."), true);
+                FUtil.staffAction(sender.getName(), "Removing an IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs"), true);
 
                 target.removeIp(args[1]);
                 plugin.sl.save(target);

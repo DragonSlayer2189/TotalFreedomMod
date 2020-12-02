@@ -57,7 +57,7 @@ public class Command_verifynostaff extends FreedomCommand
                 }
             }
             plugin.rm.updateDisplay(player);
-            FUtil.staffAction(sender.getName(), "Verified " + player.getName() + ", without staff permissions.", true);
+            FUtil.staffAction(sender.getName(), "Verified " + player.getName() + ", without staff permissions", true);
             player.setOp(true);
             player.sendMessage(YOU_ARE_OP);
             final FPlayer fPlayer = plugin.pl.getPlayer(player);

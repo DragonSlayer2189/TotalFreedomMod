@@ -30,7 +30,7 @@ public class Command_cage extends FreedomCommand
         String skullName = null;
         if ("purge".equals(args[0]))
         {
-            FUtil.staffAction(sender.getName(), "Uncaging all players.", true);
+            FUtil.staffAction(sender.getName(), "Uncaging all players", true);
             for (Player player : server.getOnlinePlayers())
             {
                 final FPlayer fPlayer = plugin.pl.getPlayer(player);

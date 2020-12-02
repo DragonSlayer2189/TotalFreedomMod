@@ -46,7 +46,7 @@ public class Command_blockpvp extends FreedomCommand
 
         if (args[0].equals("purge"))
         {
-            FUtil.staffAction(sender.getName(), "Enabling PVP for all players.", true);
+            FUtil.staffAction(sender.getName(), "Enabling PVP for all players", true);
             int count = 0;
             for (Player player : server.getOnlinePlayers())
             {

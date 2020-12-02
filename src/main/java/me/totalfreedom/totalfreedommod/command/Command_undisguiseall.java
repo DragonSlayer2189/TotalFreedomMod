@@ -26,7 +26,7 @@ public class Command_undisguiseall extends FreedomCommand
             admins = true;
         }
 
-        FUtil.staffAction(sender.getName(), "Undisguising all " + (admins ? "players" : "non-staff") + ".", true);
+        FUtil.staffAction(sender.getName(), "Undisguising all " + (admins ? "players" : "non-staff"), true);
 
         plugin.ldb.undisguiseAll(admins);
 

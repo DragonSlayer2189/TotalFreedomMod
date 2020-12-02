@@ -43,7 +43,7 @@ public class Command_slconfig extends FreedomCommand
                 checkConsole();
                 checkRank(Rank.SENIOR_ADMIN);
 
-                FUtil.staffAction(sender.getName(), "Cleaning staff list.", true);
+                FUtil.staffAction(sender.getName(), "Cleaning staff list", true);
                 plugin.sl.deactivateOldEntries(true);
                 msg("Staff: " + StringUtils.join(plugin.sl.getAdminNames(), ", "), ChatColor.GOLD);
 
@@ -54,7 +54,7 @@ public class Command_slconfig extends FreedomCommand
             {
                 checkRank(Rank.SENIOR_ADMIN);
 
-                FUtil.staffAction(sender.getName(), "Reloading the staff list.", true);
+                FUtil.staffAction(sender.getName(), "Reloading the staff list", true);
                 plugin.sl.load();
                 msg("Staff list reloaded!");
                 return true;
@@ -96,7 +96,7 @@ public class Command_slconfig extends FreedomCommand
                     return true;
                 }
 
-                FUtil.staffAction(sender.getName(), "Setting " + staffMember.getName() + "'s rank to " + rank.getName() + ".", true);
+                FUtil.staffAction(sender.getName(), "Setting " + staffMember.getName() + "'s rank to " + rank.getName(), true);
 
                 staffMember.setRank(rank);
                 plugin.sl.save(staffMember);
@@ -201,7 +201,7 @@ public class Command_slconfig extends FreedomCommand
                         return true;
                     }
 
-                    FUtil.staffAction(sender.getName(), "Adding " + player.getName() + " to the staff list.", true);
+                    FUtil.staffAction(sender.getName(), "Adding " + player.getName() + " to the staff list", true);
                     staffMember = new StaffMember(player);
 
                     plugin.sl.addAdmin(staffMember);
@@ -210,7 +210,7 @@ public class Command_slconfig extends FreedomCommand
                 }
                 else // Existing staff member
                 {
-                    FUtil.staffAction(sender.getName(), "Re-adding " + player.getName() + " to the staff list.", true);
+                    FUtil.staffAction(sender.getName(), "Re-adding " + player.getName() + " to the staff list", true);
 
                     if (player != null)
                     {
@@ -283,7 +283,7 @@ public class Command_slconfig extends FreedomCommand
                     return true;
                 }
 
-                FUtil.staffAction(sender.getName(), "Removing " + staffMember.getName() + " from the staff list.", true);
+                FUtil.staffAction(sender.getName(), "Removing " + staffMember.getName() + " from the staff list", true);
                 staffMember.setActive(false);
 
                 plugin.sl.save(staffMember);

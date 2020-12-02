@@ -30,7 +30,7 @@ public class Command_invis extends FreedomCommand
                     return noPerms();
                 else 
                 {
-                    FUtil.staffAction(sender.getName(), "Clearing all invisibility potion effects from all players.", true);
+                    FUtil.staffAction(sender.getName(), "Clearing all invisibility potion effects from all players", true);
                     clear = true;
                 }
             }

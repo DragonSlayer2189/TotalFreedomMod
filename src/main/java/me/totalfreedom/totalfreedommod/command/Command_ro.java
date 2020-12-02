@@ -123,7 +123,7 @@ public class Command_ro extends FreedomCommand
         {
             if (targetPlayer.getWorld() != staffWorld)
             {
-                FUtil.staffAction(sender.getName(), "Removing all " + names + " within " + radius + " blocks of " + targetPlayer.getName() + "!", false);
+                FUtil.staffAction(sender.getName(), "Removing all " + names + " within " + radius + " blocks of " + targetPlayer.getName(), false);
                 for (Material material : materials)
                 {
                     affected += replaceBlocks(targetPlayer.getLocation(), material, Material.AIR, radius);
@@ -131,7 +131,7 @@ public class Command_ro extends FreedomCommand
             }
         }
 
-        FUtil.staffAction(sender.getName(), "Remove complete! " + affected + " blocks removed.", false);
+        msg("Remove complete! " + affected + " blocks removed");
         return true;
     }
 

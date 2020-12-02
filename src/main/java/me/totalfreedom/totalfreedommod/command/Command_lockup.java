@@ -22,7 +22,7 @@ public class Command_lockup extends FreedomCommand
         {
             if (args[0].equalsIgnoreCase("-a"))
             {
-                FUtil.staffAction(sender.getName(), "Locking up all players.", true);
+                FUtil.staffAction(sender.getName(), "Locking up all players", true);
 
                 for (Player player : server.getOnlinePlayers())
                 {
@@ -32,7 +32,7 @@ public class Command_lockup extends FreedomCommand
             }
             else if (args[0].equalsIgnoreCase("purge"))
             {
-                FUtil.staffAction(sender.getName(), "Unlocking all players.", true);
+                FUtil.staffAction(sender.getName(), "Unlocking all players", true);
                 for (Player player : server.getOnlinePlayers())
                 {
                     cancelLockup(player);
