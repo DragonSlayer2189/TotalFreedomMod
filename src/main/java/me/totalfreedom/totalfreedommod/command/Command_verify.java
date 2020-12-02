@@ -25,7 +25,7 @@ public class Command_verify extends FreedomCommand
 
         if (senderIsConsole)
         {
-            msg("I think you are looking for /manuallyverify <player>.", ChatColor.WHITE);
+            msg("When used from the console, you must define a target player: /manuallyverify <player>.", ChatColor.WHITE);
             return true;
         }
 
