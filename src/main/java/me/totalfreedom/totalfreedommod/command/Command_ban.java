@@ -155,7 +155,7 @@ public class Command_ban extends FreedomCommand
         }
         else
         {
-            msg("Banned " + player.getName() + " with IP " + StringUtils.join(ips, ", ")) + " quietly.");
+            msg("Banned " + player.getName() + " with IP " + StringUtils.join(ips, ", ") + " quietly.");
         }
 
         // Kick player and handle others on IP
