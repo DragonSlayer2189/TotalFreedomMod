@@ -138,7 +138,7 @@ public class Module_schematic extends HTTPDModule
                 final String remoteAddress = socket.getInetAddress().getHostAddress();
                 if (!isAuthorized(remoteAddress))
                 {
-                    out.append(HTMLGenerationTools.paragraph("Schematic upload access denied: Your IP, " + remoteAddress + ", is not registered to an Admin on this server."));
+                    out.append(HTMLGenerationTools.paragraph("Schematic upload access denied: Your IP, " + remoteAddress + ", is not registered to an admin on this server."));
                 }
                 else
                 {
