@@ -8,7 +8,7 @@ import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.discord.Discord;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.rank.Rank;
-import me.totalfreedom.totalfreedommod.admin.Admin;
+import me.totalfreedom.totalfreedommod.staff.StaffMember;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
@@ -29,7 +29,7 @@ public class Command_myadmin extends FreedomCommand
         }
 
         Player init = null;
-        Admin target = getAdmin(playerSender);
+        StaffMember target = getStaffMember(playerSender);
         Player targetPlayer = playerSender;
 
         // -o switch
@@ -44,10 +44,10 @@ public class Command_myadmin extends FreedomCommand
                 return true;
             }
 
-            target = getAdmin(targetPlayer);
+            target = getStaffMember(targetPlayer);
             if (target == null)
             {
-                msg("That player is not an admin.", ChatColor.RED);
+                msg("That player is not a staff member.", ChatColor.RED);
                 return true;
             }
 
@@ -72,19 +72,19 @@ public class Command_myadmin extends FreedomCommand
 
                 if (init == null)
                 {
-                    FUtil.adminAction(sender.getName(), "Clearing my IPs", true);
+                    FUtil.staffAction(sender.getName(), "Clearing my IPs", true);
                 }
                 else
                 {
-                    FUtil.adminAction(sender.getName(), "Clearing " + target.getName() + "'s IPs", true);
+                    FUtil.staffAction(sender.getName(), "Clearing " + target.getName() + "'s IPs", true);
                 }
 
                 int counter = target.getIps().size() - 1;
                 target.clearIPs();
                 target.addIp(targetIp);
 
-                plugin.al.save(target);
-                plugin.al.updateTables();
+                plugin.sl.save(target);
+                plugin.sl.updateTables();
                 plugin.pl.syncIps(target);
 
                 msg(counter + " IPs removed.");
@@ -120,12 +120,12 @@ public class Command_myadmin extends FreedomCommand
                     }
                     else
                     {
-                        msg("You cannot remove that admin's current IP.");
+                        msg("You cannot remove that staff members current IP.");
                     }
                     return true;
                 }
 
-                FUtil.adminAction(sender.getName(), "Removing an IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs"), true);
+                FUtil.staffAction(sender.getName(), "Removing an IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs"), true);
 
                 target.removeIp(args[1]);
                 plugin.sl.save(target);
@@ -142,10 +142,10 @@ public class Command_myadmin extends FreedomCommand
             {
                 String format = StringUtils.join(args, " ", 1, args.length);
                 target.setAcFormat(format);
-                plugin.al.save(target);
-                plugin.al.updateTables();
-                msg("Set admin chat format to \"" + format + "\".", ChatColor.GRAY);
-                String example = format.replace("%name%", "ExampleAdmin").replace("%rank%", Rank.ADMIN.getAbbr()).replace("%rankcolor%", Rank.ADMIN.getColor().toString()).replace("%msg%", "The quick brown fox jumps over the lazy dog.");
+                plugin.sl.save(target);
+                plugin.sl.updateTables();
+                msg("Set staff chat format to \"" + format + "\".", ChatColor.GRAY);
+                String example = format.replace("%name%", "ExampleStaff").replace("%rank%", Rank.ADMIN.getAbbr()).replace("%rankcolor%", Rank.ADMIN.getColor().toString()).replace("%msg%", "The quick brown fox jumps over the lazy dog.");
                 msg(ChatColor.GRAY + "Example: " + FUtil.colorize(example));
                 return true;
             }
@@ -153,9 +153,9 @@ public class Command_myadmin extends FreedomCommand
             case "clearscformat":
             {
                 target.setAcFormat(null);
-                plugin.al.save(target);
-                plugin.al.updateTables();
-                msg("Cleared admin chat format.", ChatColor.GRAY);
+                plugin.sl.save(target);
+                plugin.sl.updateTables();
+                msg("Cleared staff chat format.", ChatColor.GRAY);
                 return true;
             }
 
@@ -198,7 +198,7 @@ public class Command_myadmin extends FreedomCommand
     @Override
     public List<String> getTabCompleteOptions(CommandSender sender, Command command, String alias, String[] args)
     {
-        if (!plugin.al.isAdmin(sender))
+        if (!plugin.sl.isStaff(sender))
         {
             return Collections.emptyList();
         }
@@ -225,7 +225,7 @@ public class Command_myadmin extends FreedomCommand
                 {
                     if (args[0].equals("clearip"))
                     {
-                        List<String> ips = plugin.al.getAdmin(sender).getIps();
+                        List<String> ips = plugin.sl.getAdmin(sender).getIps();
                         ips.remove(FUtil.getIp((Player)sender));
                         return ips;
                     }
@@ -246,10 +246,10 @@ public class Command_myadmin extends FreedomCommand
         {
             if (args[0].equals("-o") && args[2].equals("clearip"))
             {
-                Admin admin = plugin.al.getEntryByName(args[1]);
-                if (admin != null)
+                StaffMember staffMember = plugin.sl.getEntryByName(args[1]);
+                if (staffMember != null)
                 {
-                    return admin.getIps();
+                    return staffMember.getIps();
                 }
             }
         }

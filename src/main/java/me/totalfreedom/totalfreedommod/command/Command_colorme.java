@@ -1,5 +1,6 @@
 package me.totalfreedom.totalfreedommod.command;
 
+import java.util.Iterator;
 import java.util.Map;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
@@ -22,7 +23,7 @@ public class Command_colorme extends FreedomCommand
             return false;
         }
 
-        if (args[0].equalsIgnoreCase("list"))
+        if ("list".equalsIgnoreCase(args[0]))
         {
             msg("Colors: " + StringUtils.join(FUtil.CHAT_COLOR_NAMES.keySet(), ", "));
             return true;
@@ -30,8 +31,10 @@ public class Command_colorme extends FreedomCommand
 
         final String needle = args[0].trim().toLowerCase();
         ChatColor color = null;
-        for (Map.Entry<String, ChatColor> entry : FUtil.CHAT_COLOR_NAMES.entrySet())
+        final Iterator<Map.Entry<String, ChatColor>> it = FUtil.CHAT_COLOR_NAMES.entrySet().iterator();
+        while (it.hasNext())
         {
+            final Map.Entry<String, ChatColor> entry = it.next();
             if (entry.getKey().contains(needle))
             {
                 color = entry.getValue();
@@ -50,6 +53,7 @@ public class Command_colorme extends FreedomCommand
         plugin.esb.setNickname(sender.getName(), newNick);
 
         msg("Your nickname is now: " + newNick + ".");
+
         return true;
     }
 }

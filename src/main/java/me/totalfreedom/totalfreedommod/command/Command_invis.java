@@ -16,7 +16,7 @@ import org.bukkit.potion.PotionEffectType;
 @CommandParameters(description = "Shows or clears invisible players.", usage = "/<command> [clear]")
 public class Command_invis extends FreedomCommand
 {
-
+	
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
@@ -26,20 +26,16 @@ public class Command_invis extends FreedomCommand
         {
             if (args[0].equalsIgnoreCase("clear"))
             {
-                if(!plugin.al.isAdmin(sender))
-                {
+                if(!plugin.sl.isStaff(sender))
                     return noPerms();
-                }
                 else 
                 {
-                    FUtil.adminAction(sender.getName(), "Clearing all invisibility potion effects from all players", true);
+                    FUtil.staffAction(sender.getName(), "Clearing all invisibility potion effects from all players", true);
                     clear = true;
                 }
             }
             else
-            {
                 return false;
-            }
         }
 
         List<String> players = new ArrayList<String>();
@@ -47,10 +43,10 @@ public class Command_invis extends FreedomCommand
 
         for (Player player : server.getOnlinePlayers())
         {
-            if (player.hasPotionEffect(PotionEffectType.INVISIBILITY) && !plugin.al.isVanished(player.getName()))
+            if (player.hasPotionEffect(PotionEffectType.INVISIBILITY) && !plugin.sl.isVanished(player.getName()))
             {
                 players.add(player.getName());
-                if (clear && !plugin.al.isAdmin(player))
+                if (clear && !plugin.sl.isStaff(player))
                 {
                     player.removePotionEffect((PotionEffectType.INVISIBILITY));
                     clears++;
@@ -65,20 +61,17 @@ public class Command_invis extends FreedomCommand
         }
         
         if (clear)
-        {
             msg("Cleared " + clears + " players.");
-        }
         else
-        {
             msg("Invisible players (" + players.size() + "): " + StringUtils.join(players, ", "));
-        }    
+            
         return true;
     }
 
     @Override
     public List<String> getTabCompleteOptions(CommandSender sender, Command command, String alias, String[] args)
     {
-        if (args.length == 1 && plugin.al.isAdmin(sender))
+        if (args.length == 1 && plugin.sl.isStaff(sender))
             return Arrays.asList("clear");
 
         return Collections.emptyList();

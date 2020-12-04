@@ -29,7 +29,7 @@ public class Command_mute extends FreedomCommand
             return false;
         }
 
-        if (args[0].equalsIgnoreCase("list"))
+        if (args[0].equals("list"))
         {
             msg("Muted players:");
             FPlayer info;
@@ -51,9 +51,9 @@ public class Command_mute extends FreedomCommand
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("purge"))
+        if (args[0].equals("purge"))
         {
-            FUtil.adminAction(sender.getName(), "Unmuting all players", true);
+            FUtil.staffAction(sender.getName(), "Unmuting all players", true);
             FPlayer info;
             int count = 0;
             for (Player mp : server.getOnlinePlayers())
@@ -71,15 +71,15 @@ public class Command_mute extends FreedomCommand
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("-a"))
+        if (args[0].equals("-a"))
         {
-            FUtil.adminAction(sender.getName(), "Muting all non-admins", true);
+            FUtil.staffAction(sender.getName(), "Muting all non-staff", true);
 
             FPlayer playerdata;
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
-                if (!plugin.al.isAdmin(player))
+                if (!plugin.sl.isStaff(player))
                 {
                     player.sendTitle(ChatColor.RED + "You've been muted globally.", ChatColor.YELLOW + "Please be patient and you will be unmuted shortly.", 20, 100, 60);
                     playerdata = plugin.pl.getPlayer(player);
@@ -120,9 +120,9 @@ public class Command_mute extends FreedomCommand
         }
 
         FPlayer playerdata = plugin.pl.getPlayer(player);
-        if (plugin.al.isAdmin(player))
+        if (plugin.sl.isStaff(player))
         {
-            msg(player.getName() + " is an admin, and can't be muted.");
+            msg(player.getName() + " is a staff member, and can't be muted.");
             return true;
         }
 
@@ -163,7 +163,7 @@ public class Command_mute extends FreedomCommand
     @Override
     public List<String> getTabCompleteOptions(CommandSender sender, Command command, String alias, String[] args)
     {
-        if (!plugin.al.isAdmin(sender))
+        if (!plugin.sl.isStaff(sender))
         {
             return null;
         }
