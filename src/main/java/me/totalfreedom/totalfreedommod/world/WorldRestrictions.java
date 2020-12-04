@@ -62,7 +62,7 @@ public class WorldRestrictions extends FreedomService
 
         return !plugin.sl.isStaff(player) && player.getWorld().equals(plugin.wm.staffworld.getWorld());
     }
-
+    //Someone needs to fix this badly atm if any player has a brush enabled (why did we give ops //brush) they can freely use it, even in restricted worlds
     @EventHandler(priority = EventPriority.NORMAL)
     public void onBlockPlace(BlockPlaceEvent event)
     {
