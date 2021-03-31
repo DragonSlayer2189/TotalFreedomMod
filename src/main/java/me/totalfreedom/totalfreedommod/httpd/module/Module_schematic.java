@@ -37,7 +37,7 @@ public class Module_schematic extends HTTPDModule
                     "schem"
             };
     private static final String UPLOAD_FORM = "<form method=\"post\" name=\"schematicForm\" id=\"schematicForm\" action=\"/schematic/upload/\" enctype=\"multipart/form-data\">\n"
-            + "<p>Select a schematic file to upload. Filenames must be alphanumeric, between 1 and 30 characters long (inclusive), and have a .schematic extension.</p>\n"
+            + "<p>Select a schematic file to upload. Filenames must be alphanumeric, between 1 and 30 characters long (inclusive), and have a \".schematic\" or \".schem\" extension.</p>\n"
             + "<input type=\"file\" id=\"schematicFile\" name=\"schematicFile\" />\n"
             + "<br />\n"
             + "<button type=\"submit\">Submit</button>\n"
@@ -134,7 +134,7 @@ public class Module_schematic extends HTTPDModule
                 final String remoteAddress = socket.getInetAddress().getHostAddress();
                 if (!isAuthorized(remoteAddress))
                 {
-                    out.append(HTMLGenerationTools.paragraph("Schematic upload access denied: Your IP, " + remoteAddress + ", is not registered to an admin on this server."));
+                    out.append(HTMLGenerationTools.paragraph("Schematic upload access denied: Your IP, " + remoteAddress + ", is not registered to an admin or master builder on this server."));
                 }
                 else
                 {
@@ -230,7 +230,7 @@ public class Module_schematic extends HTTPDModule
 
         if (!SCHEMATIC_FILENAME_LC.matcher(origFileName.toLowerCase()).find())
         {
-            throw new SchematicTransferException("File name must be alphanumeric, between 1 and 30 characters long (inclusive), and have a \".schematic\" extension.");
+            throw new SchematicTransferException("File name must be alphanumeric, between 1 and 30 characters long (inclusive), and have a \".schematic\" or \".schem\" extension.");
         }
     }
 
