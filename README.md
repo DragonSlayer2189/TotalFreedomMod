@@ -15,4 +15,3 @@ For information on our security policy and reporting an issue, please see [SECUR
 ### Compiling
 
 You need Maven to build. You'd also need to set the JDK version to Java 8 as that is the current standard as of now.
-a
