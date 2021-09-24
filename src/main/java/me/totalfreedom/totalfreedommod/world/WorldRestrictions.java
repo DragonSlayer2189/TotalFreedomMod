@@ -38,7 +38,7 @@ public class WorldRestrictions extends FreedomService
         put(Flags.DESTROY_VEHICLE, StateFlag.State.DENY);
         put(Flags.ENTITY_ITEM_FRAME_DESTROY, StateFlag.State.DENY);
         put(Flags.ENTITY_PAINTING_DESTROY, StateFlag.State.DENY);
-        put(Flags.BLOCKED_CMDS, "/sign,/it sign,/ii sign,/itemizer sign,/esign,/eeditsign,/editsign", RegionGroup.NONMEMBERS)
+        put(Flags.BLOCKED_CMDS, "/sign,/it sign,/ii sign,/itemizer sign,/esign,/eeditsign,/editsign", RegionGroup.NONMEMBERS);
     }};
 
     @Override
