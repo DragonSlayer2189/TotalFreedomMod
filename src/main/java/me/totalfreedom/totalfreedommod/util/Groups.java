@@ -46,6 +46,7 @@ public class Groups
             Material.BLACK_SHULKER_BOX);
 
     public static final List<EntityType> MOB_TYPES = Arrays.asList(
+            EntityType.AXOLOTL,
             EntityType.BAT,
             EntityType.BEE,
             EntityType.BLAZE,
@@ -63,7 +64,9 @@ public class Groups
             EntityType.ENDERMITE,
             EntityType.EVOKER,
             EntityType.FOX,
+            EntityType.GOAT,
             EntityType.GHAST,
+            EntityType.GLOW_SQUID,
             EntityType.GUARDIAN,
             EntityType.HOGLIN,
             EntityType.HORSE,
@@ -115,6 +118,7 @@ public class Groups
             EntityType.ZOMBIE_VILLAGER);
 
     public static final List<Material> SPAWN_EGGS = Arrays.asList(
+            Material.AXOLOTL_SPAWN_EGG,
             Material.BAT_SPAWN_EGG,
             Material.BEE_SPAWN_EGG,
             Material.BLAZE_SPAWN_EGG,
@@ -132,7 +136,9 @@ public class Groups
             Material.ENDERMITE_SPAWN_EGG,
             Material.EVOKER_SPAWN_EGG,
             Material.FOX_SPAWN_EGG,
+            Material.GOAT_SPAWN_EGG,
             Material.GHAST_SPAWN_EGG,
+            Material.GLOW_SQUID_SPAWN_EGG
             Material.GUARDIAN_SPAWN_EGG,
             Material.HOGLIN_SPAWN_EGG,
             Material.HORSE_SPAWN_EGG,
