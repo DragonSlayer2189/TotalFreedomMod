@@ -138,7 +138,7 @@ public class Groups
             Material.FOX_SPAWN_EGG,
             Material.GOAT_SPAWN_EGG,
             Material.GHAST_SPAWN_EGG,
-            Material.GLOW_SQUID_SPAWN_EGG
+            Material.GLOW_SQUID_SPAWN_EGG,
             Material.GUARDIAN_SPAWN_EGG,
             Material.HOGLIN_SPAWN_EGG,
             Material.HORSE_SPAWN_EGG,
