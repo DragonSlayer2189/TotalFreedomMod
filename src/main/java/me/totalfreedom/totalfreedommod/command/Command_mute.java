@@ -12,13 +12,37 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.SUPER_ADMIN, source = SourceType.BOTH, permission = "tfm.admin.mute")
-@CommandParameters(description = "Mutes a player with brute force.", usage = "/<command> [[-s] <player> [reason] | list | purge | all]", aliases = "mute")
-public class Command_stfu extends FreedomCommand
+@CommandParameters(description = "Mutes a player with brute force.", usage = "/<command> [[-sm] [-s] <player> [reason] | list | purge | all]", aliases = "stfu")
+public class Command_mute extends FreedomCommand
 {
 
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
+        if (args.length == 0)
+        {
+            return false;
+        }
+
+        boolean smite = false;
+        boolean silent = false;
+        while (args.length > 0)
+        {
+            if (args[0].equals("-sm"))
+            {
+                smite = true;
+                args = ArrayUtils.subarray(args, 1, args.length);
+                continue;
+            }
+            if (args[0].equals("-s"))
+            {
+                silent = true;
+                args = ArrayUtils.subarray(args, 1, args.length);
+                continue;
+            }
+            break;
+        }
+
         if (args.length == 0)
         {
             return false;
@@ -48,7 +72,10 @@ public class Command_stfu extends FreedomCommand
 
         if (args[0].equals("purge"))
         {
-            FUtil.adminAction(sender.getName(), "Unmuting all players.", true);
+            if (!silent)
+            {
+                FUtil.adminAction(sender.getName(), "Unmuting all players.", true);
+            }
             FPlayer info;
             int count = 0;
             for (Player mp : server.getOnlinePlayers())
@@ -66,7 +93,10 @@ public class Command_stfu extends FreedomCommand
 
         if (args[0].equals("all"))
         {
-            FUtil.adminAction(sender.getName(), "Muting all non-Superadmins", true);
+            if (!silent)
+            {
+                FUtil.adminAction(sender.getName(), "Muting all non-Superadmins", true);
+            }
 
             FPlayer playerdata;
             int counter = 0;
@@ -82,18 +112,6 @@ public class Command_stfu extends FreedomCommand
 
             msg("Muted " + counter + " players.");
             return true;
-        }
-
-        // -s option (smite)
-        boolean smite = args[0].equals("-s");
-        if (smite)
-        {
-            args = ArrayUtils.subarray(args, 1, args.length);
-
-            if (args.length < 1)
-            {
-                return false;
-            }
         }
 
         final Player player = getPlayer(args[0]);
@@ -112,7 +130,10 @@ public class Command_stfu extends FreedomCommand
         FPlayer playerdata = plugin.pl.getPlayer(player);
         if (playerdata.isMuted())
         {
-            FUtil.adminAction(sender.getName(), "Unmuting " + player.getName(), true);
+            if (!silent)
+            {
+                FUtil.adminAction(sender.getName(), "Unmuting " + player.getName(), true);
+            }
             playerdata.setMuted(false);
             msg("Unmuted " + player.getName());
 
@@ -126,7 +147,10 @@ public class Command_stfu extends FreedomCommand
                 return true;
             }
 
-            FUtil.adminAction(sender.getName(), "Muting " + player.getName(), true);
+            if (!silent)
+            {
+                FUtil.adminAction(sender.getName(), "Muting " + player.getName(), true);
+            }
             playerdata.setMuted(true);
 
             if (smite)
