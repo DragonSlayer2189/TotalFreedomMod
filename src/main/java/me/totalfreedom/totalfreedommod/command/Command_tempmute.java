@@ -43,6 +43,11 @@ public class Command_tempmute extends FreedomCommand
                 expires = parsed;
             }
         }
+        if (plugin.al.isAdmin(player))
+        {
+            msg(player.getName() + " is a superadmin, and can't be muted.");
+            return true;
+        }
 
         int reasonEnd = args.length;
         String reason = reasonEnd >= 3 ? StringUtils.join(args, " ", 2, reasonEnd) : null;
