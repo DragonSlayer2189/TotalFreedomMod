@@ -305,7 +305,7 @@ public class FPlayer
         setMuted(muted, AUTO_PURGE_TICKS);
     }
 
-    public void setMuted(boolean muted, long UNMUTE_DELAY_TICKS)
+    public void setMuted(boolean muted, long unmuteDelayTicks)
     {
         FUtil.cancel(unmuteTask);
         unmuteTask = null;
@@ -320,7 +320,7 @@ public class FPlayer
             {
                 FUtil.adminAction("TotalFreedom", "Unmuting " + getPlayer().getName(), false);
                 setMuted(false);
-            }, UNMUTE_DELAY_TICKS);
+            }, unmuteDelayTicks);
         }
 
         persistMuted(muted);
