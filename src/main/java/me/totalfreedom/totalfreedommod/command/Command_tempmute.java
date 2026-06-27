@@ -33,6 +33,11 @@ public class Command_tempmute extends FreedomCommand
             msg(PLAYER_NOT_FOUND);
             return true;
         }
+        if (plugin.al.isAdmin(player))
+        {
+            msg(player.getName() + " is a superadmin, and can't be muted.");
+            return true;
+        }
 
         Date expires = FUtil.parseDateOffset("5m");
         if (args.length >= 2)
